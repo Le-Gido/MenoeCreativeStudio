@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menoe Creative Studio</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  background: #0b0b0b;
+  color: #ffffff;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* NAV */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+}
+
+nav img {
+  height: 60px;
+}
+
+nav a {
+  color: #ccc;
+  text-decoration: none;
+  margin: 0 14px;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: #f4c430;
+}
+
+.btn {
+  padding: 14px 30px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-primary {
+  background: #f4c430;
+  color: #000;
+}
+
+/* HERO SLIDESHOW */
+.hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-slideshow {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.hero-slideshow img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+}
+
+.hero-slideshow img.active {
+  opacity: 1;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 1000px;
+  padding: 0 25px;
+}
+
+.hero h1 {
+  font-size: 56px;
+  line-height: 1.15;
+}
+
+.hero h1 span {
+  color: #f4c430;
+}
+
+.hero p {
+  margin-top: 25px;
+  font-size: 22px;
+  color: #ddd;
+}
+
+.hero-actions {
+  margin-top: 40px;
+}
+
+/* SECTIONS */
+section {
+  padding: 110px 60px;
+}
+
+h2 {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+.sub {
+  font-size: 18px;
+  color: #aaa;
+  max-width: 900px;
+  margin: 0 auto 70px;
+}
+
+/* SERVICES */
+.services {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.card {
+  background: #111;
+  padding: 40px 30px;
+  border-radius: 20px;
+}
+
+.card h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 15px;
+  color: #bbb;
+}
+
+/* PORTFOLIO */
+#portfolio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.portfolio-frame {
+  width: 100%;
+  max-width: 900px;
+  aspect-ratio: 1 / 1;
+  border-radius: 26px;
+  overflow: hidden;
+  margin-top: 50px;
+}
+
+.portfolio-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ABOUT */
+.about-text {
+  max-width: 900px;
+  margin: auto;
+  font-size: 20px;
+  color: #ccc;
+}
+
+/* CONTACT */
+.contact-box {
+  background: #111;
+  padding: 55px;
+  border-radius: 22px;
+  max-width: 700px;
+  margin: auto;
+}
+
+.whatsapp {
+  display: inline-block;
+  margin-top: 15px;
+  font-size: 20px;
+  color: #25D366;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* FOOTER */
+footer {
+  padding: 45px;
+  font-size: 13px;
+  color: #888;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  nav {
+    padding: 18px 25px;
+  }
+
+  section {
+    padding: 80px 25px;
+  }
+
+  .services {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  .hero p {
+    font-size: 17px;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  .sub,
+  .about-text {
+    font-size: 17px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <img src="MC color.png" alt="Menoe Creative Studio">
+  <div>
+    <a href="#services">Services</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a class="btn btn-primary" href="https://wa.me/27849833000" target="_blank">
+    WhatsApp
+  </a>
+</nav>
+
+<section class="hero">
+  <div class="hero-slideshow">
+    <img src="hero1.png" class="active" alt="">
+    <img src="Corp gifts.png" alt="">
+  </div>
+
+  <div class="hero-content">
+    <h1>
+      Explore, create, and elevate your brand with
+      <span>exceptional design</span>
+    </h1>
+    <p>Professional Graphic Design & Web Development services.</p>
+
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="https://wa.me/27849833000" target="_blank">
+        Get a Quote
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <h2>What We Offer</h2>
+  <p class="sub">
+    We help businesses turn ideas into clear, professional visuals and digital experiences.
+    From brand design to web development and print-ready artwork, our focus is on clarity,
+    consistency, and results that support real business goals.
+  </p>
+
+  <div class="services">
+    <div class="card">
+      <h3>Graphic Design</h3>
+      <p>Branding, logos, posters, and production-ready visual assets.</p>
+    </div>
+    <div class="card">
+      <h3>Web Development</h3>
+      <p>Clean, responsive websites designed for credibility and performance.</p>
+    </div>
+    <div class="card">
+      <h3>DTF & UV Print Prep</h3>
+      <p>Professionally prepared artwork for accurate, high-quality printing.</p>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio">
+  <h2>Selected Work</h2>
+  <p class="sub">Branding, apparel, and digital solutions.</p>
+
+  <div class="portfolio-frame">
+    <img src="Laptop.png" alt="Portfolio work">
+  </div>
+</section>
+
+<section id="about">
+  <h2>About Me</h2>
+  <p class="about-text">
+    I am a Graphic Designer and Web Developer specializing in print design,
+    vector artwork, and clean modern websites that help brands stand out.
+  </p>
+</section>
+
+<section id="contact">
+  <h2>Get In Touch</h2>
+  <div class="contact-box">
+    <p>Contact me directly on WhatsApp:</p>
+    <a class="whatsapp" href="https://wa.me/27849833000" target="_blank">
+      +27 84 983 3000
+    </a>
+  </div>
+</section>
+
+<footer>
+  © 2025 Menoe Creative Studio
+</footer>
+
+<script>
+const slides = document.querySelectorAll(".hero-slideshow img");
+let current = 0;
+
+setInterval(() => {
+  slides[current].classList.remove("active");
+  current = (current + 1) % slides.length;
+  slides[current].classList.add("active");
+}, 4000);
+</script>
+
+</body>
+</html>
